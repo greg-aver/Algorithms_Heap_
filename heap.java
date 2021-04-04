@@ -1,7 +1,6 @@
 import java.util.*;
 
-class Heap
-{
+class Heap {
     public int[] HeapArray; // хранит неотрицательные числа-ключи
     private int heapSize;
 
@@ -59,10 +58,10 @@ class Heap
     }
 
     private void addVertexAndRebuildHeap() {
-        int rootNew = HeapArray[getHeapSize() - 1];
-        HeapArray[getHeapSize()] = 0;
+        HeapArray[0] = HeapArray[getHeapSize() - 1];
+        HeapArray[getHeapSize() - 1] = 0;
         heapSizeDecrement();
-        orderingVertex(rootNew);
+        orderingVertex(0);
     }
 
     public boolean Add(int key) {
@@ -103,5 +102,5 @@ class Heap
     public int getHeapSize() {
         return heapSize;
     }
-	
 }
+
